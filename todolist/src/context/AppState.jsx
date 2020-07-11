@@ -13,14 +13,17 @@ const AppState = ({children}) =>{
     const fetchTasks = async () => {
         showLoader()
         const res = await axios.get(`https://todolist-a7eea.firebaseio.com/tasks.json`)
+        if (res.data){
         let payload = Object.keys(res.data).map(key=>{
             return {
                 ...res.data[key],
                 id: key
             }
         })
-        debugger
         dispatch({type:FETCH_TASKS, payload})
+    }else{
+        dispatch({type:FETCH_TASKS, payload:{}})
+    }
     }
     const addTask = async (payload) => {
         showLoader()

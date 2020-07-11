@@ -12,7 +12,7 @@ function App() {
   }, [])
   return (
     <div className="App">  
-    <h1>todolist</h1>   
+    <h1>From pc</h1>   
     {loading ? <Loader/>:
           <table>
             <tbody>

@@ -8,7 +8,7 @@ function App() {
   const {loading} = useContext(appContext)
   return (
     <div className="App">  
-    <h1>From pc</h1>   
+    <h1>ToDo List</h1>   
     {loading ? <Loader/>:
     <Content/>
           

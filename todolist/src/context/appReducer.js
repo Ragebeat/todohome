@@ -26,6 +26,6 @@ const handlers = {
 export const appReducer = (state,action) =>{
     const handle = handlers[action.type] || handlers.DEFAULT
     let x = handle(state,action)
-    //debugger
+    debugger
     return x
 }

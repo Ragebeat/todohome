@@ -6,10 +6,9 @@ import AddTask from '../AddTask/AddTask';
 const Content = () =>{
     const {tasks, fetchTasks} = useContext(appContext)
     useEffect(()=>{
-      // eslint-disable-next-line 
       fetchTasks()
-      
-    }, [])
+      // eslint-disable-next-line
+    },[])
     return(
         <div>
             <AddTask/>

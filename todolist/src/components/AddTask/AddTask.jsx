@@ -1,9 +1,16 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect,useState } from 'react';
 import { appContext } from '../../context/appContext';
 
 const AddTask = () => {
+    const [description, setDescription] = useState('')
+    const context = useContext(appContext)
+    const submitHandler = event =>{
+        event.preventDefault({})
+        context.addTask({description: event.target[0].value, importance:event.target[1].value})
+    }
+
     return(
-        <div>
+        <form onSubmit={submitHandler}>
             <input type="text"/>
             <select name="" id="">
                 <option value="1">1</option>
@@ -12,7 +19,8 @@ const AddTask = () => {
                 <option value="4">4</option>
                 <option value="5">5</option>
             </select>
-        </div>
+            <input type="submit" value="Add"/>
+        </form>
     )
 }
 
